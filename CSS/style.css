@@ -1,0 +1,221 @@
+* {
+	box-sizing: border-box;
+}
+body {
+	font-family: 'Segoe WPN';
+}
+/* Fonts */
+@font-face {
+	font-family: 'Segoe WPN';
+	src: url('/assets/fonts/SegoeWPN.woff2') format('woff2'), url('/assets/fonts/SegoeWPN.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
+}
+
+/* common classes */
+.commonWrapper {
+	margin: 0 auto;
+	max-width: 1070px;
+	display: flex;
+}
+
+/*  */
+
+.header {
+	width: 100%;
+	background-color: #fff;
+	display: flex;
+}
+.headerWrapper {
+	justify-content: space-between;
+	flex-grow: 1;
+}
+.headerLogoWrapper {
+	display: flex;
+	align-items: center;
+}
+.headerLogo {
+	font-size: 42px;
+	margin: 0 0 0 15px;
+}
+
+/* nav */
+.navList {
+	list-style-type: none;
+	padding-left: 0;
+	margin: 50px 0 0;
+	display: flex;
+}
+.navItem {
+	margin-right: 36px;
+}
+.navItem:last-child {
+	margin-right: 0;
+}
+.navLink {
+	display: inline-block;
+	font-size: 20px;
+	padding-bottom: 20px;
+	text-decoration: none;
+	color: #6c6c6c;
+	border-bottom: solid 3px transparent;
+}
+.navLink:hover {
+	border-bottom: solid 3px #5094f2;
+}
+
+/* banner */
+.backgroundBanner {
+	max-width: 1250px;
+	margin: 0 auto 65px;
+	background-image: url('/assets/img/backgrounds/bannerBackground.jpg');
+	background-position: top center;
+	background-repeat: no-repeat;
+	border-bottom: 8px solid #fff;
+	border-image: url('/assets/img/border.svg') 0 0 100% repeat;
+}
+.bannerWrapper {
+	position: relative;
+}
+.bannerWrapper div {
+	flex-grow: 1;
+}
+.iphoneImageWrapper {
+	padding: 38px 0 21px 87px;
+	display: flex;
+	align-items: center;
+}
+.bannerImageDescription {
+	padding-top: 82px;
+}
+.bannerHeader {
+	margin: 0 0 25px;
+	font-size: 42px;
+	color: #e6e8e9;
+	font-weight: lighter;
+}
+.bannerDescription {
+	margin-bottom: 35px;
+	max-width: 260px;
+	font-size: 26px;
+	line-height: 44px;
+	color: #e6e8e9;
+	font-weight: lighter;
+}
+.signUpNow {
+	display: flex;
+	align-items: center;
+	padding: 0 11px;
+	background-color: #5094f2;
+	height: 41px;
+	border: 0px solid transparent;
+	border-radius: 2px;
+	font-size: 22px;
+	color: #e6e8e9;
+	font-weight: lighter;
+	cursor: pointer;
+}
+.signUpNow img {
+	margin-right: 11px;
+}
+.slideArrow {
+	position: absolute;
+	top: 230px;
+	cursor: pointer;
+}
+.slideArrowRight {
+	transform: rotate(180deg);
+	right: 0;
+}
+
+/* icons */
+.iconsWrapper {
+	max-width: 970px;
+	margin-bottom: 96px;
+	justify-content: space-between;
+}
+.commonIconsContainer {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	max-width: 250px;
+}
+.iconsImageContainer {
+	width: 186px;
+	height: 186px;
+	border-radius: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-bottom: 28px;
+}
+.pencilImageContainer {
+	background-color: #5094f2;
+}
+.compImageContainer {
+	background-color: #d94748;
+}
+.shopcartImageContainer {
+	background-color: #ebbb11;
+}
+.iconsHeader {
+	margin: 0 0 10px;
+	font-size: 20px;
+	color: #5094f2;
+}
+.iconsDescription {
+	text-align: center;
+	font-size: 14px;
+	margin: 0;
+	color: #909090;
+}
+
+/* Shopping Cart */
+.shoppingCartWrapper {
+	flex-direction: column;
+	margin-bottom: 51px;
+}
+.shoppingCartDescriptionWrapper {
+	display: flex;
+	justify-content: space-between;
+}
+.shoppingCartImageContainer {
+	padding-top: 34px;
+}
+.shoppingCartHeader {
+	font-size: 42px;
+	font-weight: 400;
+	color: #6f7173;
+	margin: 0;
+}
+.shoppingCartDescriptionContainer {
+	max-width: 480px;
+}
+.shoppingCartDescriptionHeader {
+	font-size: 26px;
+	color: #6f7173;
+	margin: 0 0 36px;
+}
+.shoppingCartDescription {
+	margin: 0;
+	font-size: 15px;
+	line-height: 36px;
+	color: #909090;
+}
+
+/* footer */
+.footer {
+	border-top: solid 1px #e5e5e5;
+}
+.footerCopyrightWrapper {
+	display: flex;
+	justify-content: center;
+	padding-top: 34px;
+}
+.footerCopyright {
+	margin: 0 0 44px;
+	font-size: 15px;
+	color: #979797;
+}
