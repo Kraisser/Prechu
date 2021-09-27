@@ -19,7 +19,90 @@ body {
 	max-width: 1070px;
 	display: flex;
 }
+/* .hidden {
+	display: none;
+} */
 
+/*  */
+
+/* burger menu */
+.burgerWrapper {
+	display: none;
+}
+.burgerNavList {
+	position: absolute;
+	width: 200px;
+	z-index: 1;
+	height: 0;
+	transition: height 0.4s ease;
+	overflow: hidden;
+	list-style-type: none;
+	border-radius: 0 0 2px 2px;
+	padding: 0 20px;
+	margin: 0;
+	right: 0;
+	top: 90px;
+	background-color: #fff;
+}
+.burgerNavListActive {
+	height: 150px;
+}
+.burgerNavLink {
+	font-size: 20px;
+	width: 100%;
+	display: inline-block;
+	padding-bottom: 10px;
+	text-decoration: none;
+	color: #6c6c6c;
+	border-bottom: solid 3px transparent;
+	border-radius: 2px;
+}
+.burger {
+	position: relative;
+	width: 60px;
+	height: 45px;
+	background-color: #5094f2;
+	border: none;
+	border-radius: 2px;
+	cursor: pointer;
+}
+.burger span {
+	position: absolute;
+	background-color: #fff;
+	width: 40px;
+	height: 5px;
+	left: 10px;
+}
+.burger span:nth-child(1) {
+	top: 10px;
+}
+.burger span:nth-child(2) {
+	top: 20px;
+	transition: opacity 0.5s;
+}
+.burger span:nth-child(3) {
+	top: 30px;
+}
+
+.hideSpan {
+	opacity: 0;
+}
+.stickTop {
+	animation: stickTop 0.5s ease;
+	animation-fill-mode: forwards;
+}
+.stickBot {
+	animation: stickBot 0.5s ease;
+	animation-fill-mode: forwards;
+}
+.stickTopBack {
+	animation: stickTopBack 0.5s ease;
+	animation-fill-mode: forwards;
+}
+.stickBotBack {
+	animation: stickBotBack 0.5s ease;
+	animation-fill-mode: forwards;
+}
 /*  */
 
 .header {
@@ -41,10 +124,13 @@ body {
 }
 
 /* nav */
+.nav {
+	padding-top: 50px;
+}
 .navList {
 	list-style-type: none;
 	padding-left: 0;
-	margin: 50px 0 0;
+	margin: 0;
 	display: flex;
 }
 .navItem {
@@ -61,7 +147,8 @@ body {
 	color: #6c6c6c;
 	border-bottom: solid 3px transparent;
 }
-.navLink:hover {
+.navLink:hover,
+.burgerNavLink:hover {
 	border-bottom: solid 3px #5094f2;
 }
 
@@ -233,6 +320,7 @@ body {
 		right: 1vw;
 	}
 }
+
 @media only all and (max-width: 900px) {
 	.iphoneImageWrapper {
 		padding: 3% 0 3% 30px;
@@ -254,16 +342,27 @@ body {
 		top: 50%;
 	}
 }
+
 @media only all and (max-width: 640px) {
 	.commonWrapper {
 		padding: 0 5vw;
 	}
 	.headerWrapper {
-		padding: 0 30px;
+		padding: 0 25px 0 30px;
 	}
 	.headerLogo {
 		font-size: 50px;
 		font-weight: 100;
+	}
+
+	.nav {
+		padding: 27px 0 18px;
+	}
+	.navList {
+		display: none;
+	}
+	.burgerWrapper {
+		display: block;
 	}
 
 	.slideArrow {
@@ -304,6 +403,7 @@ body {
 
 	.iconsWrapper {
 		flex-direction: column;
+		margin-bottom: 50px;
 		padding: 0;
 	}
 	.commonIconsContainer {
@@ -336,5 +436,102 @@ body {
 	.shopcartWrapper img {
 		width: 76px;
 		height: 70px;
+	}
+
+	.shoppingCartDescriptionWrapper {
+		flex-direction: column;
+	}
+	.shoppingCartHeader {
+		text-align: center;
+	}
+	.shoppingCartDescriptionHeader {
+		font-size: 34px;
+		font-weight: normal;
+	}
+	.shoppingCartImageContainer {
+		display: flex;
+		justify-content: center;
+		margin-bottom: 20px;
+	}
+	.shoppingCartImageContainer img {
+		width: 215px;
+	}
+}
+
+@media only all and (max-width: 540px) {
+	.bannerWrapper {
+		padding: 0 5vw;
+		flex-direction: column;
+	}
+	.backgroundBanner {
+		background-repeat: repeat-y;
+	}
+	.bannerDescription {
+		max-width: none;
+	}
+	.iphoneImageWrapper {
+		display: flex;
+		justify-content: center;
+		max-width: 100%;
+		padding: 10px 0 0;
+		margin-right: 0;
+	}
+	.iphoneImageWrapper img {
+		width: 200px;
+	}
+	.signUpNow {
+		font-size: 20px;
+		padding-right: 15px;
+		max-width: 180px;
+	}
+	.commonIconsContainer {
+		flex-direction: column;
+	}
+	.iconsImageContainer {
+		margin-right: 0;
+	}
+}
+
+/* animation */
+@keyframes stickTop {
+	from {
+	}
+	60% {
+		transform: translateY(10px);
+	}
+	to {
+		transform: translateY(10px) rotate(45deg);
+	}
+}
+@keyframes stickBot {
+	from {
+	}
+	60% {
+		transform: translateY(-10px);
+	}
+	to {
+		transform: translateY(-10px) rotate(-45deg);
+	}
+}
+@keyframes stickTopBack {
+	from {
+		transform: translateY(10px) rotate(45deg);
+	}
+	60% {
+		transform: translateY(10px) rotate(0);
+	}
+	to {
+		transform: translateY(0) rotate(0);
+	}
+}
+@keyframes stickBotBack {
+	from {
+		transform: translateY(-10px) rotate(-45deg);
+	}
+	60% {
+		transform: translateY(-10px) rotate(0);
+	}
+	to {
+		transform: translateY(0) rotate(0);
 	}
 }
