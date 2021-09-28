@@ -1,6 +1,13 @@
+import smoothScroll from '../modules/smoothScroll.js';
+
 let burger = document.querySelector(`#burgerMenu`),
 menu = document.querySelector(`.burgerNavList`);
 
+let menuLinks = document.querySelectorAll(`.navLink`),
+burgerMenuLinks = document.querySelectorAll(`.burgerNavLink`),
+allSmoothScrollsLinks = [...menuLinks, ...burgerMenuLinks];
+
+smoothScroll(allSmoothScrollsLinks);
 
 burger.addEventListener(`click`, burgerOpen);
 
